@@ -6,7 +6,8 @@
   //     $('list').liveQuery();
   //
   // liveQuery returns a jQuery object with a connectTo method that
-  // enables you to connect the list to a filter.
+  // enables you to connect the list to a filter. Filtered out elements
+  // get the class 'hidden' that needs to be styled in an appropriate way
   //
   // Example:
   //
@@ -14,8 +15,8 @@
   //
   //
 
+  // Application globals to manage state of the shown and hidden entries
   var liveQuery = {
-    // Application globals to manage state of the shown and hidden entries
     text: '',
     shownRows: {},
     hiddenRows: {},
@@ -90,7 +91,7 @@
       if(liveQuery.shownContent[i] && liveQuery.shownContent[i].search(term) == -1){
         liveQuery.hiddenRows[i]=liveQuery.shownRows[i];
         liveQuery.hiddenContent[i]=liveQuery.shownContent[i];
-        $(liveQuery.shownRows[i]).addClass('hide');
+        $(liveQuery.shownRows[i]).addClass('hidden');
         delete liveQuery.shownRows[i];
         delete liveQuery.shownContent[i];
       }
@@ -104,7 +105,7 @@
       if(force || (liveQuery.hiddenContent[i] && liveQuery.hiddenContent[i].search(term) != -1)){
         liveQuery.shownRows[i]=liveQuery.hiddenRows[i];
         liveQuery.shownContent[i]=liveQuery.hiddenContent[i];
-        $(liveQuery.hiddenRows[i]).removeClass('hide');
+        $(liveQuery.hiddenRows[i]).removeClass('hidden');
         delete liveQuery.hiddenRows[i];
         delete liveQuery.hiddenContent[i];
       }

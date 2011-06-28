@@ -1,6 +1,6 @@
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html
+		 PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>LiveQuery Example</title>
@@ -10,13 +10,14 @@
 	<script src="LiveQueryExample.js" type="text/javascript"></script>
 	<style type='text/css'>
 		body{font:normal 12px sans-serif}
-		.hide{display:none}
-		#spinner{display:none;vertical-align:center}
-	
+		.hidden{display:none}
+		button{position:absolute;right:50px;top:20px;}
+
 	</style>
 </head>
 <body>
-<div id='filterForm'><strong>Filter:</strong> <input id='filter' /> <img id='spinner' src='ajax-loader.gif' alt=''/></div>
+<div id='filterForm'><strong>Filter:</strong> <input id='filter' /></div>
+	<button>Filter for 'lorem'</button>
 	<ul>
 		<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
 		<li>Donec tincidunt quam sit amet velit pellentesque convallis.</li>
